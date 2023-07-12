@@ -1,0 +1,18 @@
+📌 Using activeElement() method, we can access the element which is focused by the webdriver.
+
+package selenium;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class ActiveElementExample {
+public static void main(String[] args) {
+WebDriverManager.chromedriver().setup();
+WebDriver driver=new ChromeDriver();
+driver.get("https://www.google.co.in/");
+driver.switchTo().activeElement().sendKeys("Selenium");
+}
+
+}
