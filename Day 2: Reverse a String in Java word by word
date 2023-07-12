@@ -1,0 +1,43 @@
+package javaPrograms;
+
+import java.util.Scanner;
+
+public class ReverseWord {
+	public static String reverseEachWord() {
+		Scanner scanner=new Scanner(System.in);
+		System.out.println("Enter the string: ");
+		String given = scanner.nextLine();
+		String reversed="";
+		String[] words=given.split(" ");
+		for (String w : words) {
+			char[] letters = w.toCharArray();
+			for(int i=letters.length-1; i>=0; i--) {
+				reversed=reversed+letters[i];
+				
+			}
+			reversed=reversed.toString()+" ";
+		}
+		return reversed.trim();
+	
+	}
+	
+public static void reverseWord() {
+	Scanner scanner=new Scanner(System.in);
+	System.out.println("Enter the string: ");
+	String given=scanner.nextLine();
+	String reversed="";
+	String[] temp=given.split(" ");
+	for(int i=temp.length-1; i>=0; i--){
+		reversed=reversed+temp[i]+" ";
+	}
+	scanner.close();
+	System.out.println(reversed);
+}
+	
+	public static void main(String[] args){
+		//reverseWord();
+		String res=reverseEachWord();
+		System.out.println(res);
+	}
+
+}
