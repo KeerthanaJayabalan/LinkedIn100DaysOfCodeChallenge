@@ -1,0 +1,34 @@
+Steps:
+📌 Get the input from the user.
+📌 Compare the number with its following number using for loop. If both are same, then it is duplicate.
+
+
+import java.util.Scanner;
+
+public class DuplicateElementInArray {
+public static void main(String[] args) {
+DuplicateElementInArray element = new DuplicateElementInArray();
+element.findDuplicateElement();
+}
+
+public void findDuplicateElement() {
+Scanner scanner = new Scanner(System.in);
+System.out.println("Enter the number of elements: ");
+int n = scanner.nextInt();
+int[] givenArray = new int[n];
+System.out.println("Enter the elements: ");
+for (int i = 0; i < n; i++) {
+givenArray[i] = scanner.nextInt();
+}
+System.out.println("Duplicate elements in a given array");
+for (int i = 0; i < givenArray.length; i++) {
+for (int j = i + 1; j < givenArray.length; j++) {
+if (givenArray[i] == givenArray[j]) {
+System.out.println(givenArray[i]);
+}
+}
+}
+
+
+}
+}
