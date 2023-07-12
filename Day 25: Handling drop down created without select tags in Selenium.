@@ -1,0 +1,22 @@
+📌 Click on drop down to make options visible.
+📌 Create a custom locator using option to be selected.
+📌 Locate it and select.
+
+public class NonSelectXpaths {
+@Test
+public void iterateOptions() {
+WebDriverManager.chromedriver().setup();
+WebDriver driver=new ChromeDriver();
+driver.get("https://www.facebook.com/");
+driver.findElement(By.xpath("//*[@data-testid='open-registration-form-button']")).click();
+driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+WebElement day=driver.findElement(By.id("day"));
+day.click();
+selectOption(driver, "10");
+
+}
+public void selectOption(WebDriver driver, String optionToBeSelected) {
+String dayToBeSelected="//option[text()='" +optionToBeSelected+ "']";
+driver.findElement(By.xpath(dayToBeSelected)).click();
+}
+}
