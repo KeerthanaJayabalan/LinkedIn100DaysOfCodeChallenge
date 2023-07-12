@@ -1,0 +1,7 @@
+get()
+📌 get() method is responsible for loading the page and waits until the page has finished loading.
+📌 It cannot track the history of the browser.
+
+navigate()
+📌 navigate() is only responsible for redirecting the page and then returning immediately.
+📌 It tracks the browser history and can perform back and forth in the browser.
