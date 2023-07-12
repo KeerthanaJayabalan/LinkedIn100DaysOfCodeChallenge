@@ -1,0 +1,30 @@
+📌 Using ChromeDriverOptions we can perform by add as arguments.
+📌 Using maximize() method.
+📌 Using setSize() method by passing dimension as an argument.
+
+package selenium;
+
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class MaximizeWindow {
+public static void main(String[] args) {
+WebDriverManager.chromedriver().setup();
+//option 1
+ChromeOptions chromeOptions=new ChromeOptions();
+chromeOptions.addArguments("--start-maximized");
+WebDriver driver=new ChromeDriver(chromeOptions);
+driver.get("https://www.google.co.in/");
+// option 2
+driver.manage().window().maximize();
+
+//option 3
+Dimension dimension=new Dimension(1366, 768);
+driver.manage().window().setSize(dimension);
+
+}
+}
