@@ -1,0 +1,4 @@
+Using JavaScriptExecutor, we can enter text in the text box.
+
+JavascriptExecutor js = (JavascriptExecutor) driver;
+js.executeScript("document.getElementById('email').value="abc@xxx.com");
