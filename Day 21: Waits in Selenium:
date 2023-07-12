@@ -1,0 +1,30 @@
+📍 What is an implicit wait?
+An implicit wait is a type of wait that waits for a specified time while locating an element before throwing NoSuchElementException. By default, Selenium tries to find web elements immediately when required without any wait. So, it is good to use implicit wait. This wait is applied to all the elements of the current driver instance.
+
+driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
+
+📍 What is an explicit wait?
+An explicit wait is a type of wait that is applied to a particular web element until the expected condition specified is met.
+
+WebDriverWait wait = new (driver, Duration.ofSeconds(3));
+WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a/h3")));
+
+Some of the commonly used expected conditions of an element in explicit waits are
+📌 elementToBeClickable(WebElement element or By locator)
+📌 visibilityOf(WebElement element)
+📌 visibilityOfElementLocated(By locator)
+📌 invisibilityOfElementLocated(By locator)
+📌 attributeContains(WebElement element, String attribute, String value)
+📌 alertIsPresent()
+📌 titleContains(String title)
+📌 titleIs(String title)
+📌 textToBePresentInElementLocated(By, String)
+
+📍 What is a fluent wait?
+A fluent wait is a type of wait in which we can also specify the polling intervals (the time intervals after which the driver will try to find the elements when not located) along with the maximum timeout value.
+
+Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+.withTimeout(Duration.ofSeconds(30))
+.pollingEvery(Duration.ofSeconds(5))
+.ignoring(NoSuchElementException.class);
