@@ -1,0 +1,18 @@
+public class ReverseEachWordInString {
+public String reverseEachWord(String givenStr){
+String reversedStr="";
+String[] givenStrArray=givenStr.split(" ");
+for (String word: givenStrArray) {
+char[] givenCharArray=word.toCharArray();
+for(int i=givenCharArray.length-1; i>=0; i--){
+reversedStr=reversedStr+givenCharArray[i];
+}
+reversedStr=reversedStr.toString()+" ";
+}
+return reversedStr.trim();
+}
+public static void main(String[] args) {
+ReverseEachWordInString reverseEachWordInString=new ReverseEachWordInString();
+System.out.println(reverseEachWordInString.reverseEachWord("Vamika"));
+}
+}
