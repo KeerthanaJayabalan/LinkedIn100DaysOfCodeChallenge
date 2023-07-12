@@ -1,0 +1,32 @@
+Steps:
+📌 Get the input from the user using Scanner class.
+📌 Iterate using for loop, to store the elements in an array.
+📌 Convert the array to a list using the Arrays.asList() method.
+📌 Using Collections.sort() method, sort the list.
+📌 The get() method of List interface in Java is used to get the element present in the list at a given specific index.
+📌 By subtracting 3 from total number of element we can get the third largest element in an array.
+
+
+import java.util.*;
+
+public class ThirdLargestInArray {
+public static void main(String[] args) {
+ThirdLargestInArray largestInArray = new ThirdLargestInArray();
+largestInArray.findThirdLargestElement();
+}
+
+public void findThirdLargestElement() {
+Scanner scanner = new Scanner(System.in);
+System.out.println("Enter the number of elements");
+int n = scanner.nextInt();
+Integer[] a = new Integer[n];
+System.out.println("Enter the elements: ");
+for (int i = 0; i < n; i++) {
+a[i] = scanner.nextInt();
+}
+List<Integer> list = Arrays.asList(a);
+Collections.sort(list);
+int element = list.get(n - 3);
+System.out.println("Third largest element: " + element);
+}
+}
