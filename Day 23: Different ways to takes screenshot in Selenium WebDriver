@@ -1,0 +1,27 @@
+📎 Using TakeScreenshot
+
+📌 Convert web driver object to TakeScreenshot
+📌 Call getScreenshotAs method to create image file
+📌 Copy file to Desired Location using FileHandler
+
+TakesScreenshot takesScreenshot= (TakesScreenshot) driver;
+File sourceFile =takesScreenshot.getScreenshotAs(OutputType.FILE);
+File destinationFile=new File("D://alert.png");
+FileHandler.copy(sourceFile, destinationFile);
+
+📎 Using Robot class
+
+📌 Java provides a class named “Robot” which is present in java.awt package.
+📌 Using Robot class, we can control over the mouse and keyboard devices.
+📌 Create an object of Robot class.
+📌 Get the screen size as a Rectangle.
+📌 Use createScreenCapture of Robot class and capture screenshot. This is source image.
+📌 Define destination path for screenshot.
+📌 Write source file in to permanent file.
+
+Robot robot=new Robot();
+Dimension dimension=Toolkit.getDefaultToolkit().getScreenSize();
+Rectangle rectangle=new Rectangle(dimension);
+BufferedImage srcFile =robot.createScreenCapture(rectangle);
+File destFile=new File("D://robotimage.png");
+ImageIO.write(srcFile, "png", destFile);
