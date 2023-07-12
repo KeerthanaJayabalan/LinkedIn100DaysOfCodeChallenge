@@ -1,0 +1,39 @@
+📌 accept() method to accept the alert.
+📌 dismiss() method to cancel the alert.
+📌 sendkeys() to enter values in the prompt box.
+
+package selenium;
+
+
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class HandlingAlert {
+
+public static void main(String[] args) throws InterruptedException {
+WebDriverManager.chromedriver().setup();
+WebDriver driver=new ChromeDriver();
+driver.get("https://lnkd.in/gN8iis92");
+driver.manage().window().maximize();
+Thread.sleep(2000);
+driver.findElement(By.id("alertBox")).click();
+Alert alert=driver.switchTo().alert();
+Thread.sleep(2000);
+alert.accept();
+
+driver.findElement(By.id("confirmBox")).click();
+Alert alert2=driver.switchTo().alert();
+Thread.sleep(2000);
+alert2.accept();
+
+driver.findElement(By.id("promptBox")).click();
+Alert alert3=driver.switchTo().alert();
+Thread.sleep(2000);
+alert3.sendKeys("Keerthana");
+}
+}
