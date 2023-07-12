@@ -1,0 +1,26 @@
+The tooltips text is a hidden text which is behind the elements like images, buttons, link, etc. and when you place your mouse over those elements, then some text appears which shares some of the information about that element or object.
+
+
+package selenium;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class ToolTip {
+public static void main(String[] args) {
+WebDriverManager.chromedriver().setup();
+ChromeOptions chromeOptions=new ChromeOptions();
+chromeOptions.addArguments("--start-maximized");
+WebDriver driver=new ChromeDriver(chromeOptions);
+driver.get("https://lnkd.in/gq4BN64J");
+driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+String toolTipText=driver.findElement(By.id("age")).getAttribute("title");
+System.out.println(toolTipText);
+}
+}
