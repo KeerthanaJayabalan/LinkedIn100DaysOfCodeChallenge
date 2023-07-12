@@ -1,0 +1,1 @@
+ As we can't inspect send keys, we should send the URL as follows. http://username:password@url
