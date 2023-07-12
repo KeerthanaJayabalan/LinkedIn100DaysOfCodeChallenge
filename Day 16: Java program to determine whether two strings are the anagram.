@@ -1,0 +1,36 @@
+Steps:
+📌 Define a function that takes two string parameters.
+📌 Convert both the strings into lowercase using toLowerCase() method.
+📌 Compare the length of the strings. If strings are not equal then print "Not anagram". Else go to the next step.
+📌 Convert the string parameters to character arrays using the toCharArray() method.
+📌 Sort the character arrays using the Arrays.sort() method.
+📌 Compare the sorted character arrays using the Arrays.equals() method.
+📌 If the sorted character arrays are equal, return true. Otherwise, return false.
+
+
+import java.util.Arrays;
+
+public class Anagram {
+public static void main(String[] args) {
+Anagram anagram = new Anagram();
+anagram.findStringIsAnagram("listen", "silent");
+}
+
+public void findStringIsAnagram(String str1, String str2) {
+str1 = str1.toLowerCase();
+str2 = str2.toLowerCase();
+if (str1.length() != str2.length()) {
+System.out.println("Given strings are not anagram");
+} else {
+char[] str1CharArray = str1.toCharArray();
+char[] str2CharArray = str2.toCharArray();
+Arrays.sort(str1CharArray);
+Arrays.sort(str2CharArray);
+if (Arrays.equals(str1CharArray, str2CharArray) == true) {
+System.out.println("Given strings are anagram");
+} else {
+System.out.println("Given strings are not anagram");
+}
+}
+}
+}
