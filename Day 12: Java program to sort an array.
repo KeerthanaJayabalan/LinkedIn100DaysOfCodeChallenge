@@ -1,0 +1,44 @@
+Steps:
+📌 Get the input using scanner class.
+📌 Print array before sorting using for loop.
+📌 Use for loop to iterate an array. The outer loop iterates from i=0 to i<array length. Inner loop iterates from j=i+1 to j<array length. As we going to compare the first element with successive element.
+📌 Inside the loop, compare the element at the current index to the element at the successive index. If the current element is greater than the next element, swap them using third variable.
+
+
+
+import java.util.Scanner;
+
+public class SortingAnArray {
+public static void main(String[] args) {
+Scanner scanner = new Scanner(System.in);
+System.out.println("Enter the number of elements: ");
+int n = scanner.nextInt();
+int array[] = new int[n];
+System.out.println("Enter the elements");
+for (int i = 0; i < n; i++) {
+array[i] = scanner.nextInt();
+}
+System.out.println("Original array");
+for (int i = 0; i < array.length; i++) {
+System.out.print(array[i] + " ");
+}
+System.out.println();
+sortAnArray(array);
+}
+public static void sortAnArray(int[] arr) {
+int temp = 0;
+for (int i = 0; i < arr.length; i++) {
+for (int j = i + 1; j < arr.length; j++) {
+if (arr[i] > arr[j]) {
+temp = arr[i];
+arr[i] = arr[j];
+arr[j] = temp;
+}
+}
+}
+System.out.println("Array after sorting");
+for (int i = 0; i < arr.length; i++) {
+System.out.print(arr[i] + " ");
+}
+}
+}
