@@ -1,0 +1,15 @@
+public class LengthOfString {
+public static void findLengthOfString(String s){
+char[] charArray=s.toCharArray();
+int length=0;
+for (char c: charArray) {
+length++;
+}
+System.out.println("Lenth of " +s+": "+length);
+}
+
+public static void main(String[] args) {
+findLengthOfString("Keerthana");
+findLengthOfString("Where there is a will there\'s a way");
+}
+}
