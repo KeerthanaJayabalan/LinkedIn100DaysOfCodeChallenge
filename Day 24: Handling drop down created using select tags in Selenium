@@ -1,0 +1,16 @@
+📌 “Select” class is in “org.openqa.selenium.support.ui” package.
+📌 It provides many methods to select, deselect, get options etc.
+📌 To select items, we have 3 methods: selectByIndex, selectByValue, selectByVisibleText.
+
+📎 Single select
+driver.get("https://lnkd.in/gzPh2YCM");
+WebElement course =driver.findElement(By.id("course"));
+Select select=new Select(course);
+select.selectByIndex(1);
+
+📎 Multi-select
+
+WebElement ide=driver.findElement(By.id("ide"));
+Select select1=new Select(ide);
+select1.selectByValue("ec");
+select1.selectByValue("ij");
