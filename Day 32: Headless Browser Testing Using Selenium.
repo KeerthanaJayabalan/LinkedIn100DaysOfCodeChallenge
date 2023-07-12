@@ -1,0 +1,16 @@
+Some browsers are available which doesn’t have any GUI (Graphical user interface), such browsers are called Headless browser. Some of the famous headless browsers are HtmlUnit and the NodeJs headless browsers.
+
+package selenium;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
+
+
+
+public class HeadlessBrowserTestingExample {
+public static void main(String[] args) {
+WebDriver driver=new HtmlUnitDriver();
+driver.get("https://www.google.co.in/");
+System.out.println(driver.getTitle());
+}
+}
