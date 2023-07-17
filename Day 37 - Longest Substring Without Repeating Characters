@@ -1,0 +1,28 @@
+package javaPrograms;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class LongestSubstring {
+	public static int lengthOfLongestSubstring(String s) {
+		int n = s.length();
+		int maxLength = 0;
+		int i = 0, j = 0;
+		Set<Character> set = new HashSet<>();
+		while (i < n && j < n) {
+			if (!set.contains(s.charAt(j))) {
+				set.add(s.charAt(j++));
+				maxLength = Math.max(maxLength, j - i);
+			} else {
+				set.remove(s.charAt(i++));
+			}
+		}
+		return maxLength;
+	}
+
+	public static void main(String[] args) {
+		String s = "abcadbcbb";
+		int length = lengthOfLongestSubstring(s);
+		System.out.println(length);
+	}
+}
