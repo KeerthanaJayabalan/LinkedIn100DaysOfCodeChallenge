@@ -5,7 +5,13 @@ import java.util.Set;
 
 public class LongestSubstring {
 	public static int lengthOfLongestSubstring(String s) {
+		if (s == null || s.isEmpty()) {
+			return 0;
+		}
 		int n = s.length();
+		if (n == 1) {
+			return 1;
+		}
 		int maxLength = 0;
 		int i = 0, j = 0;
 		Set<Character> set = new HashSet<>();
@@ -21,8 +27,10 @@ public class LongestSubstring {
 	}
 
 	public static void main(String[] args) {
-		String s = "abcadbcbb";
-		int length = lengthOfLongestSubstring(s);
-		System.out.println(length);
+		System.out.println(lengthOfLongestSubstring("abcadbcbb"));
+		System.out.println(lengthOfLongestSubstring(""));
+		System.out.println(lengthOfLongestSubstring("a"));
+		System.out.println(lengthOfLongestSubstring("bbbbb"));
+		
 	}
 }
