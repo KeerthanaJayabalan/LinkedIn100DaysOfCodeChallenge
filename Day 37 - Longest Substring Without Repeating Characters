@@ -3,6 +3,7 @@ package javaPrograms;
 import java.util.HashSet;
 import java.util.Set;
 
+
 public class LongestSubstring {
 	public static int lengthOfLongestSubstring(String s) {
 		if (s == null || s.isEmpty()) {
