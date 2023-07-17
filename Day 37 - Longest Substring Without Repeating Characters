@@ -17,10 +17,12 @@ public class LongestSubstring {
 		Set<Character> set = new HashSet<>();
 		while (i < n && j < n) {
 			if (!set.contains(s.charAt(j))) {
-				set.add(s.charAt(j++));
-				maxLength = Math.max(maxLength, j - i);
+				set.add(s.charAt(j));
+				j++;
+				maxLength = Math.max(maxLength, set.size());
 			} else {
-				set.remove(s.charAt(i++));
+				set.remove(s.charAt(i));
+				i++;
 			}
 		}
 		return maxLength;
