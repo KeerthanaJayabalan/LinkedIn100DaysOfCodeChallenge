@@ -1,0 +1,43 @@
+package javaPrograms;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class ReverseVowels {
+public static String reverseVowels(String givenString) {
+//Convert the string into character array
+
+char[] charArray=givenString.toCharArray();
+//Create a list of vowels
+List<Character> vowelsList=new ArrayList<>(Arrays.asList('a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'));
+int start=0;
+int end=givenString.length()-1;
+if (givenString == null || givenString.isEmpty()) {
+return null;
+}
+
+while(start<end) {
+if(vowelsList.contains(charArray[start]) && vowelsList.contains(charArray[end])) {
+char temp=charArray[start];
+charArray[start]=charArray[end];
+charArray[end]=temp;
+start++;
+end++;
+}
+else if(!vowelsList.contains(charArray[start])){
+start++;
+}
+else {
+end--;
+}
+}
+String reversedString = new String(charArray);
+return reversedString;
+}
+public static void main(String[] args) {
+System.out.println(reverseVowels("Rome wasn't built in a day"));
+System.out.println(reverseVowels(""));
+System.out.println(reverseVowels("Fly"));
+}
+}
