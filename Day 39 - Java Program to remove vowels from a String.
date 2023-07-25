@@ -1,0 +1,15 @@
+package javaPrograms;
+
+
+
+public class RemoveVowels {
+
+public void removeVowels(String s) {
+String regex="[aeiouAEIOU]";
+System.out.println(s.replaceAll(regex, ""));
+}
+public static void main(String[] args) {
+RemoveVowels removeVowels=new RemoveVowels();
+removeVowels.removeVowels("Actions speak louder than words");
+}
+}
