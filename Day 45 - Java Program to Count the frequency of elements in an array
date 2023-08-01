@@ -1,0 +1,25 @@
+package javaPrograms;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class CountFreqOfArrayElements {
+public static Map<Integer, Integer> countFreq(int[] arr, int n) {
+Map<Integer, Integer> map=new HashMap<>();
+for(int i=0; i<n; i++) {
+if(map.containsKey(arr[i])) {
+map.put(arr[i], map.get(arr[i])+1);
+}
+else {
+map.put(arr[i], 1);
+}
+}
+return map;
+}
+public static void main(String[] args) {
+int[] arr= {5,10,15,20,10,15};
+int n=arr.length;
+Map<Integer, Integer> count = countFreq(arr, n);
+System.out.println(count);
+}
+}
