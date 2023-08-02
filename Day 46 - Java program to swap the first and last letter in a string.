@@ -1,0 +1,18 @@
+package javaPrograms;
+
+public class SwapFirstAndLastCharacter {
+public static String swapFirstAndLastChar(String givenStr) {
+if(givenStr == null || givenStr.length() <= 1) {
+return givenStr;
+}
+char firstChar=givenStr.charAt(0);
+char lastChar=givenStr.charAt(givenStr.length()-1);
+String swappedString = lastChar+givenStr.substring(1, givenStr.length()-1)+firstChar;
+return swappedString;
+}
+public static void main(String[] args) {
+String input="Keerthana";
+String swappString=swapFirstAndLastChar(input);
+System.out.println(swappString);
+}
+}
