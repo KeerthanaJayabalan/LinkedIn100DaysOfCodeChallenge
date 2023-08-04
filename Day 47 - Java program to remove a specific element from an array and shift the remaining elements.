@@ -1,0 +1,26 @@
+package javaPrograms;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+public class RemoveElementInArray {
+public Object[] removeElement(Integer[] arr, Integer element) {
+List<Integer> list=new ArrayList<>();
+Collections.addAll(list, arr);
+list.remove(element);
+Object[] newArr = list.toArray();
+return newArr;
+}
+public static void main(String[] args) {
+RemoveElementInArray array=new RemoveElementInArray();
+Integer[] arr= {5,10,15,20,21,25};
+Integer elementToRemove=21;
+Object[] newArr = array.removeElement(arr, elementToRemove);
+System.out.println("Updated array");
+for (Object object : newArr) {
+System.out.println(object);
+}
+}
+}
