@@ -1,0 +1,18 @@
+package javaPrograms;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class ArraylistFrequency {
+
+public static void main(String[] args) {
+ArrayList<Integer> list=new ArrayList<>();
+list.add(5);
+list.add(10);
+list.add(15);
+list.add(5);
+list.add(20);
+System.out.println(list);
+System.out.println("Frequency of the element: "+Collections.frequency(list, 5));
+}
+}
