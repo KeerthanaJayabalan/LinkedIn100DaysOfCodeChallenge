@@ -1,0 +1,22 @@
+package javaPrograms;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class VerifyEmailAddress {
+public static void checkEmailAddr(String email) {
+String regexPattern="^[A-Za-z0-9+_.-]+@(.+)$";
+Pattern pattern=Pattern.compile(regexPattern);
+Matcher matcher=pattern.matcher(email);
+if(matcher.matches()) {
+System.out.println(email +": "+"This is a valid email address");
+}else {
+System.out.println(email +": "+ "This is not a valid email address");
+}
+}
+
+public static void main(String[] args) {
+checkEmailAddr("abc12@gmail.com");
+checkEmailAddr("xyz()gmail.com");
+}
+}
