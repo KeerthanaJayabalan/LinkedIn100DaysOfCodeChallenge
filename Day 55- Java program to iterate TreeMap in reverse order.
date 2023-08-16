@@ -1,0 +1,54 @@
+package javaPrograms;
+
+import java.util.Collections;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
+
+
+public class TreeMapReverse {
+public static void reverseUsingRevOrder() {
+TreeMap<Integer, String> map=new TreeMap<>(Collections.reverseOrder());
+map.put(5, "Lilly");
+map.put(1, "Jasmine");
+map.put(16, "Daisy");
+map.put(7, "Lavender");
+map.put(6, "Rose");
+System.out.println(map);
+System.out.println("**********************");
+}
+public static void reverseUsingDescendingKeySet() {
+TreeMap<Integer, String> map=new TreeMap<>();
+map.put(5, "Lilly");
+map.put(1, "Jasmine");
+map.put(16, "Daisy");
+map.put(7, "Lavender");
+map.put(6, "Rose");
+System.out.println("Using descendingKeySet() method");
+System.out.println("Original map" +map);
+Set<Integer> set=map.descendingKeySet();
+System.out.println("After reverse: ");
+for (Integer key : set) {
+System.out.println(key+ " "+map.get(key));
+}
+System.out.println("**********************");
+}
+public static void reverseUsingDescendingMap() {
+TreeMap<Integer, String> map=new TreeMap<>();
+map.put(5, "Lilly");
+map.put(1, "Jasmine");
+map.put(16, "Daisy");
+map.put(7, "Lavender");
+map.put(6, "Rose");
+System.out.println("Using descendingMap() method");
+System.out.println("Original map" +map);
+Map<Integer, String> revMap=map.descendingMap();
+System.out.println("After reverse: "+revMap);
+
+}
+public static void main(String[] args) {
+reverseUsingRevOrder();
+reverseUsingDescendingKeySet();
+reverseUsingDescendingMap();
+}
+}
