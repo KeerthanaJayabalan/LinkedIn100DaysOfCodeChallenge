@@ -1,0 +1,16 @@
+package javaPrograms;
+
+import java.util.TreeSet;
+
+public class FindBiggestInTreeSet {
+public static void main(String[] args) {
+TreeSet<Integer> numbers=new TreeSet<>();
+numbers.add(5);
+numbers.add(12);
+numbers.add(21);
+numbers.add(2);
+// To find the biggest number, so we use a method called last().
+  int biggestNumber = numbers.last();
+  System.out.println(biggestNumber);
+}
+}
