@@ -1,0 +1,30 @@
+package javaPrograms;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+public class FirstNonRepwatingChar {
+public static char getFirstNonRepeatingChar(String str) {
+Set<Character> repeating=new HashSet<>();
+List<Character> nonRepeating=new ArrayList<>();
+for(int i=0; i<str.length(); i++) {
+char letter=str.charAt(i);
+if(repeating.contains(letter)) {
+continue;
+}
+if(nonRepeating.contains(letter)) {
+nonRepeating.remove((Character)letter);
+repeating.add(letter);
+}else {
+nonRepeating.add(letter);
+}
+}
+return nonRepeating.get(0);
+}
+public static void main(String[] args) {
+char c=getFirstNonRepeatingChar("Vannadasan");
+System.out.println(c);
+}
+}
