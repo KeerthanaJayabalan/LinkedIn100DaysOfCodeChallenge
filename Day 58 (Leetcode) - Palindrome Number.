@@ -1,0 +1,29 @@
+package javaPrograms;
+
+import java.util.Scanner;
+
+public class PlaindromeNumber {
+public static int isPalindrome(int n) {
+int reversedNumber=0;
+while(n!=0) {
+reversedNumber=reversedNumber*10;
+reversedNumber=reversedNumber+n%10;
+n=n/10;
+}
+return reversedNumber;
+}
+public static void main(String[] args) {
+Scanner scanner=new Scanner(System.in);
+System.out.println("Enter the number");
+int n = scanner.nextInt();
+int revNumber=isPalindrome(n);
+if(revNumber==n)
+{ System.out.println(+revNumber); 
+}
+else
+{
+System.out.println("false");
+}
+scanner.close();
+}
+}
