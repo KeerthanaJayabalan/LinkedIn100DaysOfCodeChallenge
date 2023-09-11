@@ -1,0 +1,23 @@
+package javaPrograms;
+
+import java.util.Scanner;
+
+public class CapitalizeWords {
+
+public static void main(String[] args) {
+Scanner scanner=new Scanner(System.in);
+System.out.println("Enter the sentence: ");
+String sentence=scanner.nextLine();
+String[] words = sentence.split(" ");
+StringBuilder result=new StringBuilder();
+for (String word : words) {
+char firstLetter=word.charAt(0);
+char upperCaseFirstLetter=Character.toUpperCase(firstLetter);
+String str=word.substring(1);
+result.append(upperCaseFirstLetter).append(str).append(" ");
+}
+System.out.println(result.toString().trim());
+scanner.close();
+}
+
+}
