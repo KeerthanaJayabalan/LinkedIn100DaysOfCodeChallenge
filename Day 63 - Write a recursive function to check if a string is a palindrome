@@ -1,0 +1,36 @@
+package javaPrograms;
+
+public class Palindrome {
+public static boolean checkPalindrome(String word){
+if (word.length() <= 1) {
+return true; // It's a palindrome!
+} else {
+char firstLetter = word.charAt(0);
+char lastLetter = word.charAt(word.length() - 1);
+if (firstLetter == lastLetter) {
+String pal = word.substring(1, word.length() - 1);  
+return checkPalindrome(pal);
+}
+else {
+return false;
+}
+}
+}
+public static void main(String[] args) {
+String str1 = "madam";
+String str2 = "hello";
+
+if (checkPalindrome(str1)) {
+System.out.println(str1 + " is a palindrome");
+} else {
+System.out.println(str1 + " is not a palindrome");
+}
+
+if (checkPalindrome(str2)) {
+System.out.println(str2 + " is a palindrome");
+} else {
+System.out.println(str2 + " is not a palindrome");
+}
+}
+
+}
