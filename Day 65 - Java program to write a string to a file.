@@ -1,0 +1,55 @@
+package javaPrograms;
+
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+
+
+public class WriteStrInFile {
+public void usingWriteStringMethod() {
+Path path=Paths.get("D:\\Demo.txt");
+String str="When the going gets tough, the tough get going";
+try {
+Files.writeString(path, str, StandardCharsets.UTF_8);
+
+}catch(Exception e){
+System.out.println("Invalid path");
+}
+
+}
+public void usingWriteMethod() {
+Path path=Paths.get("D:\\Demo.txt");
+String str="Rome wasn't built in a day";
+byte[] array = str.getBytes();
+try {
+Files.write(path, array);
+}
+catch (Exception e) {
+System.out.println("Invalid path");
+}
+}
+public void usingWriterMethod() {
+File file=new File("D:\\Demo.txt");
+FileWriter fileWriter;
+try {
+fileWriter = new FileWriter(file);
+fileWriter.write("Rome wasn't built in a day");
+fileWriter.flush();
+fileWriter.close();
+} catch (IOException e) {
+e.printStackTrace();
+}
+
+}
+public static void main(String[] args) {
+WriteStrInFile file=new WriteStrInFile();
+file.usingWriteStringMethod();
+file.usingWriteMethod();
+}
+
+}
