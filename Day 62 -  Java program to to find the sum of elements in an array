@@ -1,0 +1,21 @@
+package javaPrograms;
+
+public class SumOfArrayElements {
+public static int findSum(int[] array, int startIndex) {
+if(startIndex>=array.length) {
+return 0;
+}
+int element=array[startIndex];
+int sum=findSum(array, startIndex+1);
+int result=element+sum;
+return result;
+}
+
+public static void main(String[] args) {
+int[] array= {13, 2, 6, 7, 11}; 
+    int sum = findSum(array, 0); 
+
+    System.out.println("The sum of chocolates is: " + sum);
+}
+
+}
