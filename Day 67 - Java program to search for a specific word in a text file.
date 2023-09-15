@@ -1,0 +1,34 @@
+package javaPrograms;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class SearchingWordInFile {
+
+public static void main(String[] args) throws FileNotFoundException {
+Scanner scanner1 = new Scanner(System.in);
+System.out.println("Enter the word to be found");
+String word = scanner1.next();
+boolean flag = false;
+int count = 0;
+System.out.println("Words are present here: ");
+Scanner scanner2=new Scanner(new FileInputStream("D:\\Books\\Quotes.txt"));
+while(scanner2.hasNextLine()) {
+String str=scanner2.nextLine();
+System.out.println(str);
+if(str.indexOf(word)!=-1) {
+flag=true;
+count++;
+}
+}
+if(flag) {
+System.out.println("File contains the specified word");
+System.out.println("Number of occurrences is: "+count);
+} else {
+System.out.println("File does not contain the specified word");
+}   
+
+}
+
+}
