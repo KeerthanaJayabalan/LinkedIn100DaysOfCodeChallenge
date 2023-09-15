@@ -1,0 +1,30 @@
+package javaPrograms;
+
+import java.io.FileWriter;
+
+import com.opencsv.CSVWriter;
+
+public class WriteToCSV {
+public static void main(String[] args) {
+try {
+String csvFile="D:\\Employees.csv";//file path
+CSVWriter csvWriter=new CSVWriter(new FileWriter(csvFile));
+String str[]= {"No", "Writer name", "Native"};
+String str1[]= {"1", "Thi.Janakiranam", "Thiruvarur"};
+String str2[]= {"2", "Robin Sharma", "Canada"};
+String str3[]= {"3", "Kalaignar", "Chennai"};
+String str4[]= {"4", "Vali", "Chennai"};
+csvWriter.writeNext(str);
+csvWriter.writeNext(str1);
+csvWriter.writeNext(str2);
+csvWriter.writeNext(str3);
+csvWriter.writeNext(str4);
+System.out.println("Done");
+csvWriter.close();
+
+}
+catch (Exception e) {
+e.printStackTrace(); }
+
+}
+}
