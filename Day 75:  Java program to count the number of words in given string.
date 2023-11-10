@@ -1,0 +1,27 @@
+package javaPrograms;
+
+import java.util.StringTokenizer;
+
+public class CountTheWordsInStr {
+public static int countWords(String str) {
+int res=0;
+String[] s = str.split(" ");
+for (String string : s) {
+res++;
+}
+return res;
+}
+public static int countUsingTokenizer(String str) {
+StringTokenizer tokenizer=new StringTokenizer(str);
+int res = tokenizer.countTokens();
+return res;
+}
+public static void main(String[] args) {
+String input="The early bird catches the worm";
+int output=countWords(input);
+System.out.println(output);
+int result=countUsingTokenizer(input);
+System.out.println("Using String Tokenizer: "+result);
+}
+
+}
