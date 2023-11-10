@@ -1,0 +1,33 @@
+
+
+package javaPrograms;
+
+public class LongestCommonPrefix {
+public static String longestCommonPrefix(String[] strings) {
+int minLength = Integer.MAX_VALUE;
+for (String string : strings) {
+minLength = Math.min(minLength, string.length());
+}
+
+StringBuilder prefix = new StringBuilder();
+for (int i = 0; i < minLength; i++) {
+char currentChar = strings[0].charAt(i);
+for (String string : strings) {
+if (string.charAt(i) != currentChar) {
+return prefix.toString();
+}
+}
+prefix.append(currentChar);
+}
+
+return prefix.toString();
+}
+
+public static void main(String[] args) {
+String[] input = {"flower", "flow", "fly"};
+String result = longestCommonPrefix(input);
+System.out.println("Longest common prefix: " + result);
+
+}
+
+}
