@@ -1,0 +1,23 @@
+package javaLearning;
+
+import java.io.File;
+
+public class DeleteFile {
+
+public static void main(String[] args) {
+try{
+File file=new File("D:\\Books\\Quotes.txt");
+boolean fileToBeDeleted = file.delete();
+if(fileToBeDeleted) {
+System.out.println("File is deleted");
+}
+else {
+System.out.println("File is not deleted");
+}
+}
+catch (Exception e) {
+System.out.println(e);
+}
+}
+
+}
