@@ -1,0 +1,43 @@
+package javaPrograms;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class SelfDividingNumbers {
+public List<Integer> checkSelfDividing(int left, int right) {
+List<Integer> result = new ArrayList<>();
+for (int num = left; num <= right; num++) {
+if (isSelfDividing(num)) {
+result.add(num);
+}
+}
+return result;
+}
+
+private boolean isSelfDividing(int num) {
+int originalNum = num;
+while (num > 0) {
+int digit = num % 10;
+if (digit == 0 || originalNum % digit != 0) {
+return false;
+}
+num /= 10;
+}
+return true;
+}
+
+public static void main(String[] args) {
+SelfDividingNumbers case1 = new SelfDividingNumbers();
+int left = 1;
+int right = 22;
+List<Integer> result = case1.checkSelfDividing(left, right);
+System.out.println(result);
+
+SelfDividingNumbers case2=new SelfDividingNumbers();
+int left2=47;
+int right2=85;
+List<Integer> res=case2.checkSelfDividing(left2, right2);
+System.out.println(res);
+}
+
+}
