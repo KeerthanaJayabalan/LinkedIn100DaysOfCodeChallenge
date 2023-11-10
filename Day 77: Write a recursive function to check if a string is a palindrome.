@@ -1,0 +1,25 @@
+package javaPrograms;
+
+public class RecursionPalindrome {
+
+public static boolean isPalindrome(String str) {
+str = str.toLowerCase();
+if (str.length() <= 1) {
+return true;
+}
+// Check if the first and last characters are the same
+if (str.charAt(0) != str.charAt(str.length() - 1)) {
+return false;
+}
+// Recursive case: Check the substring without the first and last characters
+return isPalindrome(str.substring(1, str.length() - 1));
+}
+public static void main(String[] args) {
+String input = "racecar";
+if (isPalindrome(input)) {
+System.out.println(input + " is a palindrome.");
+} else {
+System.out.println(input + " is not a palindrome.");
+}
+}
+}
