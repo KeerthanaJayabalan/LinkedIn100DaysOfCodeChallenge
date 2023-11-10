@@ -1,0 +1,20 @@
+package javaPrograms;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class MobileNumberValidation {
+public static boolean isValid(String s) {
+Pattern pattern=Pattern.compile("^\\d{10}$");
+Matcher matcher=pattern.matcher(s);
+return (matcher.matches());
+}
+public static void main(String[] args) {
+boolean result = isValid("7865481111");
+if(result==true) {
+System.out.println("Given number is valid");
+}else {
+System.out.println("Given number is not valid");
+}
+}
+}
