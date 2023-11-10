@@ -1,0 +1,27 @@
+package javaPrograms;
+
+import java.util.HashMap;
+
+public class TwoSum {
+
+public static int[] twoSum(int[] numbers, int target) {
+HashMap<Integer, Integer> map = new HashMap<>();
+for (int i = 0; i < numbers.length; i++) {
+int n = target - numbers[i];
+if (map.containsKey(n)) {
+return new int[] {map.get(n), i};
+}
+map.put(numbers[i], i);
+}
+return new int[0];
+}
+
+public static void main(String[] args) {
+int[] numbers = {2,7,11,15};
+int target = 9;
+int[] res = twoSum(numbers, target);
+for (int i : res) {
+System.out.println(i);
+}
+}
+}
