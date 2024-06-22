@@ -11,16 +11,20 @@ import java.util.Set;
 public class DuplicateWordsInString {
 public static void main(String[] args) {
 String input="The more you give, the more you get";
-LinkedHashMap<String, Integer> result=findDuplicateWords(input);
+HashMap<String, Integer> result=findDuplicateWords(input);
 System.out.println(result);
 }
 
-public static LinkedHashMap<String, Integer> findDuplicateWords(String s) {
+public static HashMap<String, Integer> findDuplicateWords(String s) {
 String str=s.toLowerCase();
 if(str == null || str.isEmpty()){
 throw new IllegalArgumentException("String cannot be null or empty");
 }
-LinkedHashMap<String, Integer> map = new LinkedHashMap<>();
+//LinkedHashMap<String, Integer> map = new LinkedHashMap<>();  
+/*** LinkedHashMap(LHM) consumes more memory than Hashmap due to internal implementation of DoubleLinkedList 
+Hashmap wont consume much memory compared to LHM 
+We can use LHM if insertion order is required **/
+ HashMap<String, Integer> map = new HashMap<>();
 String[] strArray = str.split(" ");
 for (String string :
 strArray) {
@@ -32,7 +36,7 @@ map.put(string, 1);
 }
 Set<Map.Entry<String, Integer>> set = map.entrySet();
 System.out.println("Duplicate characters in a string " + str + ":");
-LinkedHashMap<String, Integer> duplicate = new LinkedHashMap<>();
+HashMap<String, Integer> duplicate = new HashMap<>();
 for (Map.Entry<String, Integer> entry : set) {
 if (entry.getValue() > 1) {
 duplicate.put(entry.getKey(), entry.getValue());
